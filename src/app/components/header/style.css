@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.headerMenu a{
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #202022;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    font-family: 'Sarabun', sans-serif;
+
+}
+.headerMenu a:hover{
+    color: #5f9ea0;
+}

@@ -1,12 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
-import './App.css';
+import './app/styles/App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './app/pages/home';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Header from './app/components/header';
+import Footer from './app/components/footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <Header/>
+      <Router>
+        <Home/>
+      </Router>
+      <Footer/>
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
         <p>
@@ -50,7 +60,7 @@ function App() {
             React Redux
           </a>
         </span>
-      </header>
+      </header> */}
     </div>
   );
 }
