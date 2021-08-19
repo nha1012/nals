@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './app/styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './app/pages/home';
@@ -12,9 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Router>
-        <Home/>
-      </Router>
+      <Home/>
       <Footer/>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

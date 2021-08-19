@@ -9,3 +9,15 @@
 a.blog{
   text-decoration: none;
 }
+.wrapper {
+  position: relative;
+}
+.loader {
+  width: 100%;
+  position: absolute;
+  background: black;
+  opacity: 0.3;
+  height: 78%;
+  top: 12.5%;
+  left: 0%;
+}

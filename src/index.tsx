@@ -5,12 +5,18 @@ import App from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import { QueryParamProvider } from 'use-query-params';
+import { BrowserRouter as Router,Route } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <Router>
+      <QueryParamProvider ReactRouterRoute={Route}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </QueryParamProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
