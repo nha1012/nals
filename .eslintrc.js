@@ -7,9 +7,6 @@ module.exports = {
     "prettier/babel",
     "prettier/flowtype",
     "prettier/react",
-    "prettier/standard",
-    "prettier/unicorn",
-    "prettier/vue"
   ],
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   env: {
