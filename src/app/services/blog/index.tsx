@@ -1,28 +1,32 @@
 import axios from "axios";
-
+const apiUrl = "https://5f55a98f39221c00167fb11a.mockapi.io/blogs"
 export const fetchBlogs = (page: number, searchValue: string, sortValue: string) => {
-  const path = "https://5f55a98f39221c00167fb11a.mockapi.io/blogs";  
   if (searchValue) {
     return axios({
       method: "get",
-      url: path,
+      url: apiUrl,
       params:{
-        search: `${searchValue}`,
+        search: searchValue,
+        sortBy: sortValue,
+        order: 'desc'
       }
     });
   }
   return axios({
     method: "get",
-    url: path,
+    url: apiUrl,
     params:{
       page: page,
       limit: 4,
+      filter: searchValue,
+      sortBy: sortValue,
+      order: 'desc'
     }
   });
 };
 
 export const fetchBlogById = (id: number) => {
-  const path = `https://5f55a98f39221c00167fb11a.mockapi.io/blogs/${id}`;  
+  const path = `${apiUrl}/${id}`;  
   return axios({
     method: "get",
     url: path,

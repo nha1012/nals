@@ -5,13 +5,12 @@ import { withRouter } from 'react-router-dom';
 
 function Search(props: any) {
   const dispatch = useDispatch();
-
   const [valueSearch, setValueSearch] = useState<string>('');
+
   const handleSearch=()=>{
     const searchDispatch = search(valueSearch);
     dispatch(searchDispatch);
     return props.history.push(`?search=${valueSearch}`)
-
   }
   return (
     <div className="input-group mb-3">
@@ -20,7 +19,6 @@ function Search(props: any) {
         <button className="btn btn-outline-primary" type="button" id="button-addon2" onClick={handleSearch}>Search</button>
       </div>
     </div>
-  
   )
 }
 

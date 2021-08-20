@@ -6,6 +6,7 @@ import { PaginationState } from '../../models/pagination';
 const initialState: PaginationState = {
   currentPage: 1,
   loading: false,
+  disabledNext: false,
 };
 
 export const paginationSlice = createSlice({
@@ -27,12 +28,14 @@ export const paginationSlice = createSlice({
     endLoading:(state)=>{
       state.loading = false;
     },
+    disabledNext:(state, action: PayloadAction<boolean>)=>{
+      state.disabledNext = action.payload;
+    },
+    
   }
 });
 
-export const { next, pre, addPage, startLoading, endLoading } = paginationSlice.actions;
+export const { next, pre, addPage, startLoading, endLoading, disabledNext } = paginationSlice.actions;
 export const getCurrentPage = (state: RootState) => state.pagination;
-
-
 
 export default paginationSlice.reducer;

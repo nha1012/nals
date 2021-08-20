@@ -15,9 +15,9 @@ function BlogDetails(props: any) {
 
   return (
     <div className="row">
-      <div className="media row ">
+      <div className="media row blog-details" >
         <div className="col-md-7">
-          <img src={blog?.image} className="mr-3 " alt="..." />
+          <img src={blog?.image} className="mr-3" alt="..." />
         </div>
         <div className="col-md-5">
           <div className="media-body">

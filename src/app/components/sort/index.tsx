@@ -8,9 +8,17 @@ function Sort(props: any) {
   const toggleOpen = () => setIsOpen(!isOpen);
   const menuClass = `dropdown-menu${isOpen ? " show" : ""}`;
   const dispatch = useDispatch();
+
   const sortHandle = () =>{
-    const dispatchSort = sort('sortBy=createdAt&order=desc');
+    if (props.location.search) {
+      const dispatchSort = sort('createdAt');
+      dispatch(dispatchSort)
+      return props.history.push(`${props.location.search}&sortBy=createdAt&order=desc`)
+    }
+    const dispatchSort = sort('createdAt');
     dispatch(dispatchSort)
+    return props.history.push(`?sortBy=createdAt&order=desc`)
+
   }
   return (
     <div className="dropdown" onClick={toggleOpen}>

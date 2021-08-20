@@ -16,8 +16,7 @@ function BLogItem(props: {blogItem: BlogType}) {
           </div>
         </div>
       </li>
-      </Link>
-
+    </Link>
   )
 }
 

@@ -5,9 +5,10 @@ import { NumberParam, useQueryParam } from 'use-query-params';
 import { next, pre, addPage, getCurrentPage } from '../../reducres/pagination';
 import './style.css'
 function Pagination(props: any) {
+  
   const currentPage = useSelector(getCurrentPage).currentPage;
   const loading = useSelector(getCurrentPage).loading;
-
+  const disabledNext = useSelector(getCurrentPage).disabledNext;  
   const [page, setPage] = useQueryParam('page', NumberParam);
   const dispatch = useDispatch();
 
@@ -43,7 +44,7 @@ function Pagination(props: any) {
             Previous</button>
           </li>
           <li className="page-item">
-            <button className="page-link" disabled={loading ? true: false} onClick={nextClickHandle}>Next</button>
+            <button className="page-link" disabled={disabledNext || loading ? true: false} onClick={nextClickHandle}>Next</button>
           </li>
         </ul>
       </nav>
