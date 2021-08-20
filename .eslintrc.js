@@ -1,13 +1,5 @@
 module.exports = {
   root: true,
-  extends: [
-    "some-other-config-you-use",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/babel",
-    "prettier/flowtype",
-    "prettier/react",
-  ],
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   env: {
     browser: true,
